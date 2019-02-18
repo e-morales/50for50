@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+}
+
+#gradient-background {
+    background-image: linear-gradient(to left, rgba(101,204,184), rgb(59,148,94));
+}
+
+h1 {
+    color: white;
+    font-family: Raleway;
+    text-align: center;
+    letter-spacing: .05em;
+    padding: 1em;
+}
