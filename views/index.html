@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <!-- FontAwesome CDN -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <!-- superslides -->
+        <link rel="stylesheet" type="text/css" href="../public/styles/superslides.css">
         <!-- map -->
         <link rel="stylesheet" type="text/css" media="screen" href="../public/styles/jqvmap.css">
         <!---CSS---->
@@ -21,6 +23,39 @@
             <div class="inner"></div>
         </div>
         
+
+
+
+
+        <div id="slides">
+
+                <div class="overlay"></div>
+        
+                <div class="slides-container">
+                    <img src="../public/images/slide1.jpg" alt="">
+                    <img src="../public/images/slide2.jpg" alt="">
+                </div>
+        
+                <div class="titleMessage">
+                    <div class="heading">
+                        <p class="main">50 FOR 50</p>
+                        <p class="sub typed"></p>
+                    </div>
+                </div>
+        
+                <nav class="slides-navigation">
+                    <a href="#" class="next"></a>
+                    <a href="#" class="prev"></a>
+                </nav>
+        
+            </div>
+
+            
+
+
+
+
+
         <header>
             <h1>50 Songs for 50 States</h1>
         </header>
@@ -28,15 +63,13 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget odio sodales, feugiat leo at, faucibus leo. Sed mattis sollicitudin urna, porttitor malesuada dui interdum nec. Pellentesque orci mauris, hendrerit a dictum in, faucibus id justo. Maecenas et posuere metus. Donec dignissim nisi libero, ac suscipit diam ullamcorper sit amet. Pellentesque venenatis, lorem et elementum consequat, mauris ante sollicitudin ante, at dapibus ex augue sit amet nibh. Aliquam sit amet tellus aliquam, interdum sem ac, congue quam. In hac habitasse platea dictumst.</p>
 
         </section>
-
-        <div id="vmap" style="width: 600px; height: 400px;"></div>
-
-
-
+        <div class="mapSection">
+            <div id="vmap"></div>
+        </div>
 
         <div class="copyrightSection">
             <div class="col-md-12 text-center">
-                <p>&copy; Copyright Brandon Johnson, Enrique Morales, Isaac Chang</p>
+                <p>&copy; Copyright 2019. Brandon Johnson, Enrique Morales, Isaac Chang</p>
             </div>
 
         </div>
@@ -48,14 +81,13 @@
         crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        
         <!-- map -->
         <script type="text/javascript" src="../public/scripts/jquery.vmap.js"></script>
         <script type="text/javascript" src="../public/scripts/jquery.vmap.usa.js" charset="utf-8"></script>
-
-        <!-- mapbox cdn -->
-        <!-- <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
-        <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' /> -->
+        <!-- superslides -->
+        <script src="../public/scripts/jquery.superslides.js"></script>
+        <!-- typed -->
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 
         <script src ="../public/scripts/main.js"></script>
 
