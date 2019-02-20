@@ -21,13 +21,17 @@ $(document).ready(function() {
     selectedColor: "#c9dfaf",
     selectedRegions: null,
     showTooltip: true,
-    onRegionClick: function(element, code, region) {
-      var message =
-        'You clicked "' +
-        region +
-        '" which has the code: ' +
-        code.toUpperCase();
-      alert(message);
+    onRegionClick: function(element, code, state) {
+      $.ajax({
+        type: "GET",
+        url: `/api/songs/${state}`,
+        data: "json",
+        success: function(songs) {
+          songs.forEach(song => {
+            $(".songholder").html(`<div>${song.title}</div>`);
+          });
+        }
+      });
     }
   });
 });

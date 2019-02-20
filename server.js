@@ -34,6 +34,15 @@ app.get("/api/songs", (req, res) => {
   });
 });
 
+app.get("/api/songs/:state", (req, res) => {
+  db.Song.find({ state: req.params.state }, (err, songs) => {
+    if (err) console.error("Error finding all songs");
+    res.json(songs);
+  });
+});
+
+//
+
 ////
 // Users
 ////
