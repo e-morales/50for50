@@ -1,37 +1,41 @@
 // Preloader
 $(window).on("load", function() {
-    $(".loader .inner").fadeOut(500, function() {
-        $(".loader").fadeOut(750);
-    });
+  $(".loader .inner").fadeOut(500, function() {
+    $(".loader").fadeOut(750);
+  });
 });
 
 $(document).ready(function() {
-
-$('#vmap').vectorMap({
-    map: 'usa_en',
-    backgroundColor: '#a5bfdd',
-    borderColor: '#818181',
+  $("#vmap").vectorMap({
+    map: "usa_en",
+    backgroundColor: "#a5bfdd",
+    borderColor: "#818181",
     borderOpacity: 0.25,
     borderWidth: 1,
-    color: '#f4f3f0',
+    color: "#f4f3f0",
     enableZoom: true,
-    hoverColor: '#c9dfaf',
+    hoverColor: "#c9dfaf",
     hoverOpacity: null,
-    normalizeFunction: 'linear',
-    scaleColors: ['#b6d6ff', '#005ace'],
-    selectedColor: '#c9dfaf',
+    normalizeFunction: "linear",
+    scaleColors: ["#b6d6ff", "#005ace"],
+    selectedColor: "#c9dfaf",
     selectedRegions: null,
     showTooltip: true,
-    onRegionClick: function(element, code, region){
-        var message = 'You clicked "'
-            + region
-            + '" which has the code: '
-            + code.toUpperCase();
-
-        alert(message);
+    onRegionClick: function(element, code, region) {
+      var message =
+        'You clicked "' +
+        region +
+        '" which has the code: ' +
+        code.toUpperCase();
+      alert(message);
     }
+  });
 });
 
-
-
-});
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log("Name: " + profile.getName());
+  console.log("Image URL: " + profile.getImageUrl());
+  console.log("Email: " + profile.getEmail()); // This is null if the 'email' scope is not present.
+}

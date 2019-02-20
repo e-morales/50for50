@@ -304,6 +304,11 @@ let songList = [
   }
 ];
 
+let fakeUser = {
+  name: "James John",
+  songs: []
+};
+
 // stores the songs
 db.Song.deleteMany({}, (err, songs) => {
   if (err) console.error(err);
@@ -316,11 +321,11 @@ db.Song.deleteMany({}, (err, songs) => {
 
 // Create User and associate with songs?
 
-// db.User.deleteMany({}, (err, newUser) => {
-//   if (err) console.error(err);
-//   console.log("Deleted Users");
-//   db.User.create(fakeUser, (err, newUser) => {
-//     if (err) console.error(err);
-//     console.log(newUser);
-//   });
-// });
+db.User.deleteMany({}, (err, deletedUser) => {
+  if (err) console.error(err);
+  console.log("Deleted Users");
+  db.User.create(fakeUser, (err, newUser) => {
+    if (err) console.error(err);
+    console.log(newUser);
+  });
+});
