@@ -29,6 +29,7 @@ $(document).ready(function() {
         success: function(songs) {
           songs.forEach(song => {
             $(".songholder").html(`<div>${song.title}</div>`);
+            $("iframe").attr("src", `${song.songUrl}`);
           });
         }
       });

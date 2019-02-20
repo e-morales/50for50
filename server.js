@@ -34,9 +34,11 @@ app.get("/api/songs", (req, res) => {
   });
 });
 
+// Route for Clicking on Song for State
+
 app.get("/api/songs/:state", (req, res) => {
   db.Song.find({ state: req.params.state }, (err, songs) => {
-    if (err) console.error("Error finding all songs");
+    if (err) console.error("Error finding this song.");
     res.json(songs);
   });
 });
