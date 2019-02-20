@@ -11,15 +11,15 @@ $(document).ready(function() {
         animation: 'fade',
         play: 5000,
         pagination: false,
-      });
-  
-      var typed = new Typed(".typed", {
+    });
+
+    var typed = new Typed(".typed", {
         strings: ["50 Songs for 50 States."],
         typeSpeed: 70,
         loop: true,
         startDelay: 1000,
         showCursor: false
-      });
+    });
 
     $('#vmap').vectorMap({
         map: 'usa_en',
