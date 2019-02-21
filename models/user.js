@@ -3,7 +3,6 @@ Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
   name: String,
-  password: String,
   songs: [
     {
       type: Schema.Types.ObjectId,
