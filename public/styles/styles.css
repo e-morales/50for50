@@ -1,9 +1,3 @@
-body {
-    background: #333;
-    color: #fff;
-}
-
-/***** Loader *****/
 .loader {
     width: 100%;
     height: 100%;
@@ -19,27 +13,30 @@ body {
     height: 100%;
     background: url(../images/preloader.gif) center center no-repeat;
 }
-/***** Header *****/
 
-
-/***** Nav *****/
-.navbar {
-    border-bottom: crimson 3px solid;
+body {
+    background: #333;
+    color: #fff;
 }
 
-.navbar-dark .navbar-brand{
+.navbar {
+    border-bottom: #008ed6 3px solid;
+    opacity: 0.8;
+}
+
+.navbar-dark .navbar-brand {
     font-family: Raleway;
     font-size: 2em;
 }
 
 .bg-dark {
-    background: black!important;
+    background: black !important;
 }
 
-.small, .strong {
+.small,
+.strong {
     color: crimson;
     font-weight: 900;
-
 }
 
 .display-4 {
@@ -49,19 +46,20 @@ body {
     font-weight: 600;
 }
 
-h2{
+h2 {
     font-size: 1.75em;
     font-weight: 200;
 }
 
-/***** Form *****/
 .bg-primary {
-    background-color: crimson!important;
+    background-color: crimson !important;
 }
 
+#vmap {
+    width: 1020px;
+    height: 680px;
+}
 
-
-/***** Home Section *****/
 #home-section {
     background: url(../images/slide2.jpg);
     background-repeat: no-repeat;
@@ -88,19 +86,14 @@ h2{
 }
 
 #home-section .fas {
-    color: crimson;
+    color: #008ed6;
+    background: #fff;
     padding: 5px;
     border-radius: 5px;
 }
 
-/***** Footer *****/
-
-
-
-/***** Map *****/
-#vmap {
-    width: 600px;
-    height: 400px;
+#map-section {
+    min-height: 700px;
 }
 
 #map-section .fas {
@@ -108,4 +101,22 @@ h2{
     color: #fff;
     padding: 5px;
     border-radius: 5px;
+}
+
+/* #map-section .container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+} */
+
+/* iframe {
+    margin-left: 50px;
+} */
+
+.span3 {
+    max-height: 225px !important;
+    overflow: scroll;
 }
