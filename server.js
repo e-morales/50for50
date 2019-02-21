@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const db = require("./models");
 const Song = db.Song;
 const User = db.User;
+const PlayList = db.Playlist;
 
 // Configures Body Parser to Receive Form-Data
 app.use(bodyParser.urlencoded({ extended: true }));
