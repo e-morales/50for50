@@ -28,7 +28,9 @@ $(document).ready(function() {
         data: "json",
         success: songs => {
           songs.forEach(song => {
-            $(".songholder").html(`<div>${song.artist} - ${song.title}</div>`);
+            $(".songholder").html(
+              `<div>Now Playing: ${song.artist} - ${song.title}</div>`
+            );
             $("iframe").attr("src", `${song.songUrl}`);
           });
         }

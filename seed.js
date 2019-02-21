@@ -316,6 +316,7 @@ db.Song.deleteMany({}, (err, songs) => {
   db.Song.create(songList, (err, newSongs) => {
     if (err) console.error(err);
     console.log(newSongs);
+    process.exit();
   });
 });
 
