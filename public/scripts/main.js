@@ -7,6 +7,7 @@ $(window).on("load", function() {
   });
 });
 
+// Google Sign-In
 function onSignIn(googleUser) {
   let profile = googleUser.getBasicProfile();
   console.log(profile);
@@ -29,6 +30,8 @@ function handleSignIn(response) {
   } else {
   }
 }
+
+// Loads Smooth Scrolling
 
 $(document).ready(function() {
   // Gets current copyright year
