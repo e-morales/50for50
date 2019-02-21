@@ -1,14 +1,43 @@
-// Preloader
+// import { google } from "googleapis";
 
-$(window).on("load", function () {
-    $(".loader .inner").fadeOut(500, function () {
-        $(".loader").fadeOut(750);
-    });
+
+// Preloader
+$(window).on("load", function() {
+  $(".loader .inner").fadeOut(500, function() {
+    $(".loader").fadeOut(750);
+  });
 });
 
-$(document).ready(function () {
-    // Gets current copyright year
-    $("#year").text(new Date().getFullYear());
+// Google Sign-In
+function onSignIn(googleUser) {
+  let profile = googleUser.getBasicProfile();
+  console.log(profile);
+  let user = {
+    email: profile.U3,
+    name: profile.ig
+  };
+  $.ajax({
+    type: "POST",
+    url: `/api/users`,
+    data: user,
+    success: handleSignIn,
+    error: err => console.log(err)
+  });
+}
+
+function handleSignIn(response) {
+  console.log(response);
+  if (response == "user exists") {
+  } else {
+  }
+}
+
+// Loads Smooth Scrolling
+
+$(document).ready(function() {
+  // Gets current copyright year
+  $("#year").text(new Date().getFullYear());
+
 
     // Init Scrollspy
     $("body").scrollspy({
@@ -63,5 +92,10 @@ $(document).ready(function () {
                 }
             });
         }
-    });
+      });
+    }
+  });
 });
+
+// url: `/api/users/${userid}/songs/${songId}`
+
