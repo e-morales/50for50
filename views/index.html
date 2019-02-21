@@ -1,105 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        
-        <!---Bootstrap CDN-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <!-- FontAwesome CDN -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <!-- superslides -->
-        <link rel="stylesheet" type="text/css" href="../public/styles/superslides.css">
-        <!-- map -->
-        <link rel="stylesheet" type="text/css" media="screen" href="../public/styles/jqvmap.css">
-        <!---CSS---->
-        <link rel="stylesheet" type="text/css" href="../public/styles/styles.css">
-        
-        <title>50 for 50</title>
-    </head>
-    <body>
+brandon-dev
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- GOOGLE CDN -->
+    <meta
+      name="google-signin-client_id"
+      content="912206809862-1s3869moehfe5oubo2afgtnaq8k47t01.apps.googleusercontent.com"
+    />
 
-        <div class="loader">
-            <div class="inner"></div>
-        </div>
-        
+    <!---Bootstrap CDN-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <!-- map -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/styles/jqvmap.css"
+    />
+    <!---CSS---->
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css" />
 
+    <title>50 for 50</title>
+  </head>
+  <body>
+    <div class="loader">
+      <div class="inner"></div>
+    </div>
 
+    <header>
+      <h1>50 Songs for 50 States</h1>
+    </header>
+    <section>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget odio
+        sodales, feugiat leo at, faucibus leo. Sed mattis sollicitudin urna,
+        porttitor malesuada dui interdum nec. Pellentesque orci mauris,
+        hendrerit a dictum in, faucibus id justo. Maecenas et posuere metus.
+        Donec dignissim nisi libero, ac suscipit diam ullamcorper sit amet.
+        Pellentesque venenatis, lorem et elementum consequat, mauris ante
+        sollicitudin ante, at dapibus ex augue sit amet nibh. Aliquam sit amet
+        tellus aliquam, interdum sem ac, congue quam. In hac habitasse platea
+        dictumst.
+      </p>
+    </section>
 
-
-        <div id="slides">
-
-                <div class="overlay"></div>
-        
-                <div class="slides-container">
-                    <img src="../public/images/slide1.jpg" alt="">
-                    <img src="../public/images/slide2.jpg" alt="">
-                </div>
-        
-                <div class="titleMessage">
-                    <div class="heading">
-                        <p class="main">50 FOR 50</p>
-                        <p class="sub typed"></p>
-                    </div>
-                </div>
-        
-                <nav class="slides-navigation">
-                    <a href="#" class="next"></a>
-                    <a href="#" class="prev"></a>
-                </nav>
-        
-            </div>
-
-        <div class="sidenav">
-                <a href="#1">1</a>
-                <a href="#2">2</a>
-                <a href="#3">3</a>
-                <a href="#4">4</a>
-                <a href="#5">5</a>
-                <a href="#6">6</a>
-                <a href="#7">7</a>
-        </div>   
-
-
-
-
-
-        <header>
-            <h1>50 Songs for 50 States</h1>
-        </header>
-        <section>
+    <div id="vmap" style="width: 600px; height: 400px;"></div>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <div class="songholder"></div>
 
 
-        </section>
-        <div class="mapSection">
-            <div id="vmap"></div>
-        </div>
+    <iframe
+      id="player"
+      type="text/html"
+      width="600"
+      height="400"
+      src="https://www.youtube.com/embed/3kJWdUFzL0Y"
+      frameborder="0"
+    ></iframe>
 
-        <div class="copyrightSection">
-            <div class="col-md-12 text-center">
-                <p>&copy; Copyright 2019. Brandon Johnson, Enrique Morales, Isaac Chang</p>
-            </div>
+ brandon-dev
+    <div class="copyrightSection">
+      <div class="col-md-12 text-center">
+        <p>&copy; Copyright Brandon Johnson, Enrique Morales, Isaac Chang</p>
+      </div>
+    </div>
 
-        </div>
+    <!-- GOOGLE AUTH -->
+    <script
+      src="https://apis.google.com/js/platform.js?onload=init"
+      async
+      defer
+    ></script>
 
-        <!---Bootstrap CDN-->
-        <script
-        src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <!-- map -->
-        <script type="text/javascript" src="../public/scripts/jquery.vmap.js"></script>
-        <script type="text/javascript" src="../public/scripts/jquery.vmap.usa.js" charset="utf-8"></script>
-        <!-- superslides -->
-        <script src="../public/scripts/jquery.superslides.js"></script>
-        <!-- typed -->
-        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+     
 
-        <script src ="../public/scripts/main.js"></script>
+    <!---Bootstrap CDN-->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
 
+ brandon-dev
+    <!-- map -->
+    <script type="text/javascript" src="/scripts/jquery.vmap.js"></script>
+    <script
+      type="text/javascript"
+      src="/scripts/jquery.vmap.usa.js"
+      charset="utf-8"
+    ></script>
+
+    <!-- mapbox cdn -->
+    <!-- <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' /> -->
 
       
-    </body>
+
+
+    <script src="/scripts/main.js"></script>
+  </body>
 </html>
