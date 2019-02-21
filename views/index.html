@@ -4,13 +4,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>50 for 50</title>
+
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta
     name="google-signin-client_id"
     content="912206809862-1s3869moehfe5oubo2afgtnaq8k47t01.apps.googleusercontent.com"
   />
-
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"
+  ></script>
   <link
     rel="stylesheet"
     href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
@@ -110,6 +116,16 @@
             <div class="card bg-primary text-center card-form">
               <div class="card-body">
                 <div class=" btn g-signin2" data-onsuccess="onSignIn"></div>
+                <a class="btn" href="#" onclick="signOut()">Sign out</a>
+                <script>
+                  function signOut() {
+                    console.log("sign out");
+                    var auth2 = gapi.auth2.getAuthInstance();
+                    auth2.signOut().then(function() {
+                      console.log("User signed out.");
+                    });
+                  }
+                </script>
               </div>
             </div>
           </div>
@@ -225,13 +241,7 @@
       </div>
     </div>
   </div>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-  <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"
-  ></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"

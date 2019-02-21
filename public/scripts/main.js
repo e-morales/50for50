@@ -1,10 +1,34 @@
-// Preloader
+// import { google } from "googleapis";
 
+// Preloader
 $(window).on("load", function() {
   $(".loader .inner").fadeOut(500, function() {
     $(".loader").fadeOut(750);
   });
 });
+
+function onSignIn(googleUser) {
+  let profile = googleUser.getBasicProfile();
+  console.log(profile);
+  let user = {
+    email: profile.U3,
+    name: profile.ig
+  };
+  $.ajax({
+    type: "POST",
+    url: `/api/users`,
+    data: user,
+    success: handleSignIn,
+    error: err => console.log(err)
+  });
+}
+
+function handleSignIn(response) {
+  console.log(response);
+  if (response == "user exists") {
+  } else {
+  }
+}
 
 $(document).ready(function() {
   // Gets current copyright year
@@ -66,3 +90,5 @@ $(document).ready(function() {
     }
   });
 });
+
+// url: `/api/users/${userid}/songs/${songId}`
