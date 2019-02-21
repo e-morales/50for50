@@ -40,6 +40,10 @@ body {
     color: crimson;
     font-weight: 900;
 
+
+#vmap {
+    width: 1020px;
+    height: 680px;
 }
 
 .display-4 {
@@ -98,9 +102,9 @@ h2{
 
 
 /***** Map *****/
-#vmap {
-    width: 600px;
-    height: 400px;
+
+#map-section {
+    min-height: 700px;
 }
 
 #map-section .fas {
@@ -108,4 +112,22 @@ h2{
     color: #fff;
     padding: 5px;
     border-radius: 5px;
+}
+
+/* #map-section .container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+} */
+
+/* iframe {
+    margin-left: 50px;
+} */
+
+.span3 {
+    max-height: 225px !important;
+    overflow: scroll;
 }
