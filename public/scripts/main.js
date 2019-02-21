@@ -1,28 +1,43 @@
 // Preloader
-$(window).on("load", function() {
-  $(".loader .inner").fadeOut(500, function() {
-    $(".loader").fadeOut(750);
-  });
+
+$(window).on("load", function () {
+    $(".loader .inner").fadeOut(500, function () {
+        $(".loader").fadeOut(750);
+    });
 });
 
-$(document).ready(function() {
- brandon-dev
- 
+$(document).ready(function () {
 
 
-    $('#slides').superslides({
-        animation: 'fade',
-        play: 5000,
-        pagination: false,
+    // Gets current copyright year
+    $('#year').text(new Date().getFullYear());
+
+    // Init Scrollspy
+    $('body').scrollspy({
+        target: '#main-nav'
     });
 
-    var typed = new Typed(".typed", {
-        strings: ["50 Songs for 50 States."],
-        typeSpeed: 70,
-        loop: true,
-        startDelay: 1000,
-        showCursor: false
+    // Smooth Scrolling
+    $('#main-nav a').on('click', function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+
+            const hash = this.hash;
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function () {
+
+                window.location.hash = hash;
+            });
+        }
     });
+
+
+
+
+
+
 
     $("#vmap").vectorMap({
     map: "usa_en",
@@ -55,4 +70,4 @@ $(document).ready(function() {
       });
     }
   });
-master
+
