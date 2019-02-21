@@ -26,7 +26,7 @@ $(document).ready(function() {
         type: "GET",
         url: `/api/songs/${state}`,
         data: "json",
-        success: function(songs) {
+        success: songs => {
           songs.forEach(song => {
             $(".songholder").html(`<div>${song.artist} - ${song.title}</div>`);
             $("iframe").attr("src", `${song.songUrl}`);
