@@ -94,6 +94,7 @@ app.post("/api/users/:userId/songs/:songId", (req, res) => {
       User.findOneAndUpdate({ _id: user }, foundUser, { new: true })
         .populate("songs")
         .exec((err, updatedUser) => {
+          if (err) console.error(err);
           res.json(updatedUser);
         });
     }
