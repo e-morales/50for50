@@ -6,6 +6,10 @@
   <title>50 for 50</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="google-signin-client_id"
+    content="912206809862-1s3869moehfe5oubo2afgtnaq8k47t01.apps.googleusercontent.com"
+  />
 
   <link
     rel="stylesheet"
@@ -105,31 +109,7 @@
           <div class="col-lg-4">
             <div class="card bg-primary text-center card-form">
               <div class="card-body">
-                <h3>Sign In</h3>
-                <p>Please fill out this form to login</p>
-                <form action="">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control form-control-lg"
-                      placeholder="Username"
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <input
-                      type="password"
-                      class="form-control form-control-lg"
-                      placeholder="Password"
-                    />
-                  </div>
-
-                  <input
-                    type="submit"
-                    value="Submit"
-                    class="btn btn-outline-light btn-block"
-                  />
-                </form>
+                <div class=" btn g-signin2" data-onsuccess="onSignIn"></div>
               </div>
             </div>
           </div>
@@ -245,6 +225,7 @@
       </div>
     </div>
   </div>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 
   <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -266,5 +247,3 @@
 
   <script src="scripts/main.js" async defer></script>
 </body>
-
-<script src="scripts/main.js" async defer></script>
