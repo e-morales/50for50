@@ -6,7 +6,25 @@ $(window).on("load", function() {
 });
 
 $(document).ready(function() {
-  $("#vmap").vectorMap({
+ brandon-dev
+ 
+
+
+    $('#slides').superslides({
+        animation: 'fade',
+        play: 5000,
+        pagination: false,
+    });
+
+    var typed = new Typed(".typed", {
+        strings: ["50 Songs for 50 States."],
+        typeSpeed: 70,
+        loop: true,
+        startDelay: 1000,
+        showCursor: false
+    });
+
+    $("#vmap").vectorMap({
     map: "usa_en",
     backgroundColor: "#a5bfdd",
     borderColor: "#818181",
@@ -37,4 +55,4 @@ $(document).ready(function() {
       });
     }
   });
-});
+master
