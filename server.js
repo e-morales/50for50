@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 
 // Database
 const db = require("./models");
-// const Song = db.Song;
+const Song = db.Song;
 const User = db.User;
 
 // Configures Body Parser to Receive Form-Data
@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 
 // Show all Songs
 app.get("/api/songs", (req, res) => {
-  db.Song.find({}, (err, songs) => {
+  Song.find({}, (err, songs) => {
     if (err) console.error("Error finding all songs");
     res.json(songs);
   });
@@ -37,7 +37,7 @@ app.get("/api/songs", (req, res) => {
 // Route for Clicking on Song for State
 
 app.get("/api/songs/:state", (req, res) => {
-  db.Song.find({ state: req.params.state }, (err, songs) => {
+  Song.find({ state: req.params.state }, (err, songs) => {
     if (err) console.error("Error finding this song.");
     res.json(songs);
   });
@@ -53,6 +53,15 @@ app.get("/api/songs/:state", (req, res) => {
 app.get("/api/users", (req, res) => {
   User.find({}, (err, users) => {
     if (err) console.error("Error finding all users");
+    res.json(users);
+  });
+});
+
+// Sign-in
+
+app.get("/api/users/:name", (req, res) => {
+  User.find({ name: req.params.name }, (err, users) => {
+    if (err) console.error(err);
     res.json(users);
   });
 });
