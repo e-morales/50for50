@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>50 for 50</title>
 
-  <meta name="description" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="icon" type="image/ico" href="../public/images/music_note.png" />
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta
     name="google-signin-client_id"
@@ -17,99 +16,85 @@
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"
   ></script>
-  <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-    crossorigin="anonymous"
-  />
-  <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous"
-  />
-  <link
-    rel="stylesheet"
-    type="text/css"
-    media="screen"
-    href="styles/jqvmap.css"
-  />
 
-  <link rel="stylesheet" href="styles/styles.css" />
+    <title>50 for 50</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/jqvmap.css">
+
+
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <div class="loader">
-  <div class="inner"></div>
+    <div class="inner"></div>
 </div>
 
 <body data-spy="scroll" data-target="#main-nav" id="home">
-  <nav
-    class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top"
-    id="main-nav"
-  >
-    <div class="container">
-      <a href="index.html" class="navbar-brand">50 for 50</a>
-      <button
-        class="navbar-toggler"
-        data-toggle="collapse"
-        data-target="#navbarCollapse"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a href="#home" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#map-head-section" class="nav-link">Map</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HOME SECTION -->
-  <header id="home-section">
-    <div class="dark-overlay">
-      <div class="home-inner container">
-        <div class="row">
-          <div class="col-lg-8 d-none d-lg-block">
-            <h1 class="display-4">
-              We mapped each state's <strong>#1</strong> song. See which songs
-              <strong>dominate</strong> across the country!
-            </h1>
-            <div class="d-flex">
-              <div class="p-4 align-self-start">
-                <i class="fas fa-music fa-2x"></i>
-              </div>
-              <div class="p-4 align-self-end">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Dignissimos placeat, commodi sapiente iure vitae mollitia!
-              </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="main-nav">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">50 Songs For 50 States</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#map-head-section" class="nav-link">Map</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Playlist</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">CA</a>
+                            <a class="dropdown-item" href="#">NV</a>
+                            <a class="dropdown-item" href="#">FL</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
+        </div>
+    </nav>
 
-            <div class="d-flex">
-              <div class="p-4 align-self-start">
-                <i class="fas fa-music fa-2x"></i>
-              </div>
-              <div class="p-4 align-self-end">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Dignissimos placeat, commodi sapiente iure vitae mollitia!
-              </div>
-            </div>
+    <!-- HOME SECTION -->
+    <header id="home-section">
+        <div class="dark-overlay">
+            <div class="home-inner container">
+                <div class="row">
+                    <div class="col-lg-8 d-none d-lg-block">
+                        <h1 class="display-4">
+                            We mapped each state's <strong>#1</strong> song. See which songs
+                            <strong>dominate</strong> across the country!
+                        </h1>
+                        <div class="d-flex">
+                            <div class="p-4 align-self-start">
+                                <i class="fas fa-music fa-2x"></i>
+                            </div>
+                            <div class="p-4 align-self-end">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                Dignissimos placeat, commodi sapiente iure vitae mollitia!
+                            </div>
+                        </div>
 
-            <div class="d-flex">
-              <div class="p-4 align-self-start">
-                <i class="fas fa-music fa-2x"></i>
-              </div>
-              <div class="p-4 align-self-end">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Dignissimos placeat, commodi sapiente iure vitae mollitia!
-              </div>
-            </div>
-          </div>
+                        <div class="d-flex">
+                            <div class="p-4 align-self-start">
+                                <i class="fas fa-music fa-2x"></i>
+                            </div>
+                            <div class="p-4 align-self-end">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                Dignissimos placeat, commodi sapiente iure vitae mollitia!
+                            </div>
+                        </div>
+
 
           <!-- FORM -->
           <div class="col-lg-4">
@@ -134,113 +119,216 @@
     </div>
   </header>
 
-  <!-- MAP HEAD -->
-  <section id="map-head-section">
-    <div class="container">
-      <div class="row">
-        <div class="col text-center py-5">
-          <h1 class="display-4">MAP</h1>
-          <p class="lead">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-            quibusdam sapiente non officia quia unde dolores magnam eius
-            reiciendis. Ullam.
-          </p>
-          <a href="#" class="btn btn-outline-secondary">Find Out More</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- MAP SECTION -->
-  <section id="map-section" class="bg-light text-muted py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <div id="vmap" class="mb-3 rounded"></div>
-          <!-- <img src="img/slide1.jpg" alt="" class="img-fluid mb-3 rounded-circle"> -->
+                                    <input type="submit" value="Submit" class="btn btn-outline-light btn-block" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+    </header>
+    <!-- MAP HEAD -->
+    <section id="map-head-section">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center py-5">
+                    <h1 class="display-4">MAP</h1>
+                    <p class="lead">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                        quibusdam sapiente non officia quia unde dolores magnam eius
+                        reiciendis. Ullam.
+                    </p>
+                    <a href="#" class="btn btn-outline-secondary">Find Out More</a>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-          <h3>Save Your Favorite Songs</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi,
-            ad! Sed omnis molestiae distinctio quis quas aperiam voluptate
-            explicabo at?
-          </p>
-          <div class="d-flex">
-            <div class="p-4 align-self-start">
-              <i class="fas fa-music fa-2x"></i>
-            </div>
-            <div class="p-4 align-self-end">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius aut
-              ullam quidem adipisci, veniam incidunt?
-            </div>
-          </div>
+    </section>
 
-          <div class="d-flex">
-            <div class="p-4 align-self-start">
-              <i class="fas fa-music fa-2x"></i>
-            </div>
-            <div class="p-4 align-self-end">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-              voluptates excepturi saepe reprehenderit suscipit illo.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- MAP SECTION -->
+    <section id="map-section" class="bg-light text-muted py-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div id="vmap" class="mb-3 rounded w-100"></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex flex-column mb-3">
+                        <div class="mw-100">
+                            <!-- iframe player -->
+                            <iframe id="player" type="text/html" width="530" height="450" src="https://www.youtube.com/embed/3kJWdUFzL0Y"
+                                frameborder="0"></iframe>
+                            <div class="span3">
+                                <!-- playlist  -->
+                                <table class="table table-sm table-dark">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Song</th>
+                                            <th scope="col">Artist</th>
+                                            <th scope="col">...</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>California Love</td>
+                                            <td>2Pac</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Viva Las Vegas</td>
+                                            <td>Elvis Presley</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Viva Las Vegas</td>
+                                            <td>Elvis Presley</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4</th>
+                                            <td>Viva Las Vegas</td>
+                                            <td>Elvis Presley</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">5</th>
+                                            <td>Viva Las Vegas</td>
+                                            <td>Elvis Presley</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">6</th>
+                                            <td>Viva Las Vegas</td>
+                                            <td>Elvis Presley</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7</th>
+                                            <td>Super Long Song Name Test... Lorem, ipsum dolor.</td>
+                                            <td>Super Long Artist Name Test... Lorem, ipsum dolor.</td>
+                                            <td>Lorem ipsum dolor sit amet.</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7</th>
+                                            <td>Song</td>
+                                            <td>Artist</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7</th>
+                                            <td>Song</td>
+                                            <td>Artist</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7</th>
+                                            <td>Song</td>
+                                            <td>Artist</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7</th>
+                                            <td>Song</td>
+                                            <td>Artist</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7</th>
+                                            <td>Song</td>
+                                            <td>Artist</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7</th>
+                                            <td>Song</td>
+                                            <td>Artist</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7</th>
+                                            <td>Song</td>
+                                            <td>Artist</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7</th>
+                                            <td>Song</td>
+                                            <td>Artist</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7</th>
+                                            <td>Song</td>
+                                            <td>Artist</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7</th>
+                                            <td>Song</td>
+                                            <td>Artist</td>
+                                            <td>...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
 
-  <!-- FOOTER -->
-  <footer id="main-footer" class="bg-dark">
-    <div class="container">
-      <div class="row">
-        <div class="col text-center py-4">
-          <h3>50 for 50</h3>
-          <p>Copyright &copy; <span id="year"></span></p>
-          <button
-            class="btn btn-primary"
-            data-toggle="modal"
-            data-target="#contactModal"
-          >
-            Contact Us
-          </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- CONTACT MODAL -->
-  <div class="modal fade text-dark" id="contactModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Contact Us</h5>
-          <button class="close" data-dismiss="modal">
-            <span>&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" class="form-control" />
+    <!-- FOOTER -->
+    <footer id="main-footer" class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center py-4">
+                    <h3>50 for 50</h3>
+                    <p>Copyright &copy; <span id="year"></span></p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#contactModal">
+                        Contact Us
+                    </button>
+                </div>
             </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea class="form-control"></textarea>
-            </div>
-          </form>
         </div>
-        <div class="modal-footer">
-          <button class="btn btn-primary btn-block">Submit</button>
+    </footer>
+
+    <!-- CONTACT MODAL -->
+    <div class="modal fade text-dark" id="contactModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Contact Us</h5>
+                    <button class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-block">Submit</button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+
 
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -257,3 +345,5 @@
 
   <script src="scripts/main.js" async defer></script>
 </body>
+</html>
+

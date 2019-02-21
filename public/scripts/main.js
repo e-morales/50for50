@@ -1,5 +1,6 @@
 // import { google } from "googleapis";
 
+
 // Preloader
 $(window).on("load", function() {
   $(".loader .inner").fadeOut(500, function() {
@@ -37,57 +38,59 @@ $(document).ready(function() {
   // Gets current copyright year
   $("#year").text(new Date().getFullYear());
 
-  // Init Scrollspy
-  $("body").scrollspy({
-    target: "#main-nav"
-  });
 
-  // Smooth Scrolling
-  $("#main-nav a").on("click", function(event) {
-    if (this.hash !== "") {
-      event.preventDefault();
+    // Init Scrollspy
+    $("body").scrollspy({
+        target: "#main-nav"
+    });
 
-      const hash = this.hash;
+    // Smooth Scrolling
+    $("#main-nav a").on("click", function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
 
-      $("html, body").animate(
-        {
-          scrollTop: $(hash).offset().top
-        },
-        800,
-        function() {
-          window.location.hash = hash;
-        }
-      );
-    }
-  });
+            const hash = this.hash;
 
-  $("#vmap").vectorMap({
-    map: "usa_en",
-    backgroundColor: "#a5bfdd",
-    borderColor: "#818181",
-    borderOpacity: 0.25,
-    borderWidth: 1,
-    color: "#f4f3f0",
-    enableZoom: true,
-    hoverColor: "#c9dfaf",
-    hoverOpacity: null,
-    normalizeFunction: "linear",
-    scaleColors: ["#b6d6ff", "#005ace"],
-    selectedColor: "#c9dfaf",
-    selectedRegions: null,
-    showTooltip: true,
-    onRegionClick: function(element, code, state) {
-      $.ajax({
-        type: "GET",
-        url: `/api/songs/${state}`,
-        data: "json",
-        success: songs => {
-          songs.forEach(song => {
-            $(".songholder").html(
-              `<div>Now Playing: ${song.artist} - ${song.title}</div>`
+            $("html, body").animate({
+                    scrollTop: $(hash).offset().top
+                },
+                800,
+                function () {
+                    window.location.hash = hash;
+                }
             );
-            $("iframe").attr("src", `${song.songUrl}`);
-          });
+        }
+    });
+
+    $("#vmap").vectorMap({
+        map: "usa_en",
+        backgroundColor: "#a5bfdd",
+        borderColor: "#818181",
+        borderOpacity: 0.25,
+        borderWidth: 1,
+        color: "#f4f3f0",
+        enableZoom: true,
+        hoverColor: "#c9dfaf",
+        hoverOpacity: null,
+        normalizeFunction: "linear",
+        scaleColors: ["#b6d6ff", "#005ace"],
+        selectedColor: "#c9dfaf",
+        selectedRegions: null,
+        showTooltip: true,
+        onRegionClick: function (element, code, state) {
+            $.ajax({
+                type: "GET",
+                url: `/api/songs/${state}`,
+                data: "json",
+                success: songs => {
+                    songs.forEach(song => {
+                        $(".songholder").html(
+                            `<div>Now Playing: ${song.artist} - ${song.title}</div>`
+                        );
+                        $("iframe").attr("src", `${song.songUrl}`);
+                    });
+                }
+            });
         }
       });
     }
@@ -95,3 +98,4 @@ $(document).ready(function() {
 });
 
 // url: `/api/users/${userid}/songs/${songId}`
+
