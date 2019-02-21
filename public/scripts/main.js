@@ -1,45 +1,40 @@
 // Preloader
 
-$(window).on("load", function () {
-    $(".loader .inner").fadeOut(500, function () {
-        $(".loader").fadeOut(750);
-    });
+$(window).on("load", function() {
+  $(".loader .inner").fadeOut(500, function() {
+    $(".loader").fadeOut(750);
+  });
 });
 
-$(document).ready(function () {
+$(document).ready(function() {
+  // Gets current copyright year
+  $("#year").text(new Date().getFullYear());
 
+  // Init Scrollspy
+  $("body").scrollspy({
+    target: "#main-nav"
+  });
 
-    // Gets current copyright year
-    $('#year').text(new Date().getFullYear());
+  // Smooth Scrolling
+  $("#main-nav a").on("click", function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
 
-    // Init Scrollspy
-    $('body').scrollspy({
-        target: '#main-nav'
-    });
+      const hash = this.hash;
 
-    // Smooth Scrolling
-    $('#main-nav a').on('click', function (event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-
-            const hash = this.hash;
-
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 800, function () {
-
-                window.location.hash = hash;
-            });
+      $("html, body").animate(
+        {
+          scrollTop: $(hash).offset().top
+        },
+        800,
+        function() {
+          window.location.hash = hash;
         }
-    });
+      );
+    }
+  });
 
-
-
-
-
-
-
-    $("#vmap").vectorMap({
+  $("#vmap").vectorMap({
     map: "usa_en",
     backgroundColor: "#a5bfdd",
     borderColor: "#818181",
@@ -70,5 +65,4 @@ $(document).ready(function () {
       });
     }
   });
-
 });
