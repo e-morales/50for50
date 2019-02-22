@@ -1,67 +1,97 @@
+// import { google } from "googleapis";
+
 // Preloader
-
-$(window).on("load", function () {
-    $(".loader .inner").fadeOut(500, function () {
-        $(".loader").fadeOut(750);
-    });
+$(window).on("load", function() {
+  $(".loader .inner").fadeOut(500, function() {
+    $(".loader").fadeOut(750);
+  });
 });
 
-$(document).ready(function () {
-    // Gets current copyright year
-    $("#year").text(new Date().getFullYear());
+// Google Sign-In
+function onSignIn(googleUser) {
+  let profile = googleUser.getBasicProfile();
+  console.log(profile);
+  let user = {
+    email: profile.U3,
+    name: profile.ig
+  };
+  $.ajax({
+    type: "POST",
+    url: `/api/users`,
+    data: user,
+    success: handleSignIn,
+    error: err => console.log(err)
+  });
+}
 
-    // Init Scrollspy
-    $("body").scrollspy({
-        target: "#main-nav"
-    });
+function handleSignIn(response) {
+  console.log(response);
+  if (response == "user exists") {
+  } else {
+  }
+}
 
-    // Smooth Scrolling
-    $("#main-nav a").on("click", function (event) {
-        if (this.hash !== "") {
-            event.preventDefault();
+// Loads Smooth Scrolling
 
-            const hash = this.hash;
+$(document).ready(function() {
+  // Gets current copyright year
+  $("#year").text(new Date().getFullYear());
 
-            $("html, body").animate({
-                    scrollTop: $(hash).offset().top
-                },
-                800,
-                function () {
-                    window.location.hash = hash;
-                }
+  // Init Scrollspy
+  $("body").scrollspy({
+    target: "#main-nav"
+  });
+
+  // Smooth Scrolling
+  $("#main-nav a").on("click", function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+
+      const hash = this.hash;
+
+      $("html, body").animate(
+        {
+          scrollTop: $(hash).offset().top
+        },
+        800,
+        function() {
+          window.location.hash = hash;
+        }
+      );
+    }
+  });
+
+  $("#vmap").vectorMap({
+    map: "usa_en",
+    backgroundColor: "#a5bfdd",
+    borderColor: "#818181",
+    borderOpacity: 0.25,
+    borderWidth: 1,
+    color: "#f4f3f0",
+    enableZoom: true,
+    hoverColor: "#c9dfaf",
+    hoverOpacity: null,
+    normalizeFunction: "linear",
+    scaleColors: ["#b6d6ff", "#005ace"],
+    selectedColor: "#c9dfaf",
+    selectedRegions: null,
+    showTooltip: true,
+    onRegionClick: function(element, code, state) {
+      $.ajax({
+        type: "GET",
+        url: `/api/songs/${state}`,
+        data: "json",
+        success: songs => {
+          songs.forEach(song => {
+            $(".songholder").html(
+              `<div>Now Playing: ${song.artist} - ${song.title}</div>`
             );
+            $("iframe").attr("src", `${song.songUrl}`);
+          });
         }
-    });
-
-    $("#vmap").vectorMap({
-        map: "usa_en",
-        backgroundColor: "#a5bfdd",
-        borderColor: "#818181",
-        borderOpacity: 0.25,
-        borderWidth: 1,
-        color: "#f4f3f0",
-        enableZoom: true,
-        hoverColor: "#c9dfaf",
-        hoverOpacity: null,
-        normalizeFunction: "linear",
-        scaleColors: ["#b6d6ff", "#005ace"],
-        selectedColor: "#c9dfaf",
-        selectedRegions: null,
-        showTooltip: true,
-        onRegionClick: function (element, code, state) {
-            $.ajax({
-                type: "GET",
-                url: `/api/songs/${state}`,
-                data: "json",
-                success: songs => {
-                    songs.forEach(song => {
-                        $(".songholder").html(
-                            `<div>Now Playing: ${song.artist} - ${song.title}</div>`
-                        );
-                        $("iframe").attr("src", `${song.songUrl}`);
-                    });
-                }
-            });
-        }
-    });
+      });
+    }
+  });
 });
+
+// url: `/api/users/${userid}/songs/${songId}`

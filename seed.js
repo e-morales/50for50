@@ -328,5 +328,6 @@ db.User.deleteMany({}, (err, deletedUser) => {
   db.User.create(fakeUser, (err, newUser) => {
     if (err) console.error(err);
     console.log(newUser);
+    process.exit();
   });
 });
