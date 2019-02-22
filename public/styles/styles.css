@@ -42,10 +42,38 @@ body {
     color: #65ccb8;
     font-weight: 300;
     font-family: Raleway;
-
+}
+.strong {
+    color: #182628;
+    font-size: 1.5em;
+    font-weight: 500;
 }
 
+.lowercase {
+    text-transform: lowercase;
+    
+}
 
+.tab {
+    margin-left: .5em;
+}
+.tab2 {
+    margin-left: 7em;
+}
+
+.big {
+    font-size: 3em;
+    line-height: .75em;
+}
+
+.sub {
+    font-size: 1.5em;
+    margin-top: 2em;
+}
+
+.margin {
+    margin-top: 2em;
+}
 
 .display-4 {
     text-transform: uppercase;
@@ -97,8 +125,9 @@ h2 {
 
 #home-section .fas {
     color: white;
-    padding: 5px;
+    padding: .5em;
     border-radius: 5px;
+    font-size: 1.25em;
 }
 
 /***** Footer *****/
