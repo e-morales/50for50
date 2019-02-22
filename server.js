@@ -69,7 +69,7 @@ app.post("/api/users", (req, res) => {
     if (err) return console.log(err);
     console.log(foundUser);
     if (foundUser) {
-      res.send("user exists");
+      res.send(`user exists and ${foundUser.id}`);
     } else {
       User.create(req.body, (err, newUser) => {
         if (err) return console.error(err);
@@ -100,6 +100,28 @@ app.post("/api/users/:userId/songs/:songId", (req, res) => {
           res.json(updatedUser);
         });
     }
+  });
+});
+
+// Delete Song from Personal Songs
+app.delete("/api/users/:userId/songs/:songId", (req, res) => {
+  let user = req.params.userId;
+  let song = req.params.songId;
+  User.findOne({ _id: user }, (err, foundUser) => {
+    if (err) return res.send(err);
+    console.log(foundUser);
+    foundUser.songs.forEach(loopsong => {
+      if (loopsong == song) {
+        res.send("Song deleted");
+        foundUser.songs.splice(loopsong, 1);
+      }
+      User.findOneAndUpdate({ _id: user }, foundUser, { new: true })
+        .populate("songs")
+        .exec((err, updatedUser) => {
+          if (err) console.error(err);
+          res.json(updatedUser);
+        });
+    });
   });
 });
 

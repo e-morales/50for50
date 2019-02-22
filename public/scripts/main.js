@@ -1,5 +1,5 @@
 // import { google } from "googleapis";
-
+let profile;
 // Preloader
 $(window).on("load", function() {
   $(".loader .inner").fadeOut(500, function() {
@@ -9,7 +9,7 @@ $(window).on("load", function() {
 
 // Google Sign-In
 function onSignIn(googleUser) {
-  let profile = googleUser.getBasicProfile();
+  profile = googleUser.getBasicProfile();
   console.log(profile);
   let user = {
     email: profile.U3,
@@ -30,6 +30,26 @@ function handleSignIn(response) {
   } else {
   }
 }
+
+// Favorites Song
+
+$(".fa-heart").on("click", event => {
+  event.preventDefault();
+  //   let profile = googleUser.getBasicProfile();
+  console.log(profile);
+  songId = $(".fa-heart").data("data-id");
+  console.log(songId);
+  let userId = {
+    email: profile.U3,
+    name: profile.ig
+  };
+  $.ajax({
+    type: "POST",
+    url: `/api/users/${userId}/songs/${songId}`,
+    success: response => console.log("Song favorited", response),
+    error: err => console.error(err)
+  });
+});
 
 // Loads Smooth Scrolling
 
@@ -61,6 +81,8 @@ $(document).ready(function() {
     }
   });
 
+  // Map Functionality
+
   $("#vmap").vectorMap({
     map: "usa_en",
     backgroundColor: "#a5bfdd",
@@ -83,10 +105,8 @@ $(document).ready(function() {
         data: "json",
         success: songs => {
           songs.forEach(song => {
-            $(".songholder").html(
-              `<div>Now Playing: ${song.artist} - ${song.title}</div>`
-            );
             $("iframe").attr("src", `${song.songUrl}`);
+            $("#favoriteSong").data(song._id);
           });
         }
       });
