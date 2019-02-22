@@ -6,7 +6,7 @@ This is a full stack web application that plays the 50 most popular songs in eac
 ### https://serene-refuge-94124.herokuapp.com/
 *
 
-##Tech Used
+## Tech Used
 * HTML & CSS
 * BootStrap
 * JavaScript & JQuery
@@ -30,6 +30,9 @@ This is a full stack web application that plays the 50 most popular songs in eac
 * Optimize for mobile devices / smaller screens
 * Global Playlist
 
+## Preloader Code 
+
+#### CSS
 
 ```.loader {
     width: 100%;
@@ -46,7 +49,11 @@ This is a full stack web application that plays the 50 most popular songs in eac
     height: 100%;
     background: url(../images/preloader.gif) center center no-repeat;
 }
+```
 
+### JS
+
+```
 $(window).on("load", function () {
   $(".loader .inner").fadeOut(500, function () {
     $(".loader").fadeOut(750);
