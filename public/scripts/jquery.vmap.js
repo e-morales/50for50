@@ -345,9 +345,9 @@ JQVMap.maps = {};
 
     var defaultParams = {
       map: 'world_en',
-      backgroundColor: '#a5bfdd',
+      backgroundColor: '#65ccb8',
       color: '#f4f3f0',
-      hoverColor: '#c9dfaf',
+      hoverColor: '#65ccb8',
       hoverColors: {},
       selectedColor: '#c9dfaf',
       scaleColors: ['#b6d6ff', '#005ace'],
@@ -356,7 +356,7 @@ JQVMap.maps = {};
       showTooltip: true,
       borderColor: '#818181',
       borderWidth: 1,
-      borderOpacity: 0.25,
+      borderOpacity: 0.75,
       selectedRegions: null,
       multiSelectRegion: false
     }, map = this.data('mapObject');
