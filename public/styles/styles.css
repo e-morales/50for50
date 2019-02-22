@@ -24,6 +24,37 @@ body {
     opacity: 0.8;
 }
 
+.navbar-dark .navbar-brand {
+    font-family: Raleway;
+    font-size: 2em;
+}
+
+.bg-dark {
+    background: black !important;
+}
+
+.small,
+.strong {
+    color: crimson;
+    font-weight: 900;
+}
+
+.display-4 {
+    text-transform: uppercase;
+    font-family: Raleway;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.75em;
+    font-weight: 200;
+}
+
+.bg-primary {
+    background-color: crimson !important;
+}
+
 #vmap {
     width: 1020px;
     height: 680px;
@@ -81,8 +112,19 @@ body {
     max-width: 100%;
 } */
 
-/* iframe {
-    margin-left: 50px;
+.iframe-container {
+    overflow: scroll;
+    /* padding-top: 56.25%;
+    position: relative; */
+}
+
+/* .iframe-container iframe {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
 } */
 
 .span3 {

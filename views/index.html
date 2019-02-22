@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link rel="icon" type="image/ico" href="../public/images/music_note.png" />
+    <link rel="icon" type="image/ico" href="images/music_note.png" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="912206809862-1s3869moehfe5oubo2afgtnaq8k47t01.apps.googleusercontent.com" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 
     <title>50 for 50</title>
     <meta name="description" content="">
@@ -26,6 +31,7 @@
 </div>
 
 <body data-spy="scroll" data-target="#main-nav" id="home">
+
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="main-nav">
         <div class="container">
             <a href="index.html" class="navbar-brand">50 Songs For 50 States</a>
@@ -61,9 +67,11 @@
                 <div class="row">
                     <div class="col-lg-8 d-none d-lg-block">
                         <h1 class="display-4">
-                            We mapped each state's <strong>#1</strong> song. See which songs
-                            <strong>dominate</strong> across the country!
-                        </h1>
+                            Each state's <span class="strong">#1</span> hit.</h1>
+                        <h2>Discover which songs <span class="strong">dominate</span> across the country!</h2>
+                        <!-- We mapped each state's <strong>#1</strong> song. See which songs
+                            <strong>dominate</strong> across the country! -->
+
                         <div class="d-flex">
                             <div class="p-4 align-self-start">
                                 <i class="fas fa-music fa-2x"></i>
@@ -101,22 +109,32 @@
                         <div class="card bg-primary text-center card-form">
                             <div class="card-body">
                                 <h3>Sign In</h3>
-                                <p>Please fill out this form to login</p>
+                                <p>Please sign in to save your playlist</p>
                                 <form action="">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control form-control-lg" placeholder="Username" />
-                                    </div>
 
-                                    <div class="form-group">
-                                        <input type="password" class="form-control form-control-lg" placeholder="Password" />
-                                    </div>
+                                    <!-- Google sign in button -->
+                                    <div class="g-signin2 mb-3" data-width="305" data-height="50" data-longtitle="true data-onsuccess="
+                                        onSignIn"></div>
 
-                                    <input type="submit" value="Submit" class="btn btn-outline-light btn-block" />
+                                    <!-- Sign out -->
+                                    <a class="btn btn-outline-light btn-block" href="#" onclick="signOut()">Sign
+                                        out</a>
+                                    <script>
+                                        function signOut() {
+                                                console.log("sign out");
+                                                var auth2 = gapi.auth2.getAuthInstance();
+                                                auth2.signOut().then(function() {
+                                                alert("You have signed out");
+                                                });
+                                        }
+                                            </script>
+
                                 </form>
                             </div>
                         </div>
                     </div>
     </header>
+
     <!-- MAP HEAD -->
     <section id="map-head-section">
         <div class="container">
@@ -141,12 +159,15 @@
                 <div class="col-lg-8">
                     <div id="vmap" class="mb-3 rounded w-100"></div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-xl-4">
                     <div class="d-flex flex-column mb-3">
-                        <div class="mw-100">
+                        <div class="iframe-container mw-100">
                             <!-- iframe player -->
                             <iframe id="player" type="text/html" width="530" height="450" src="https://www.youtube.com/embed/3kJWdUFzL0Y"
                                 frameborder="0"></iframe>
+                            TODO:
+                            <a class="favoriteSong" href="#"><i class="fas fa-heart"></i></a>
+
                             <div class="span3">
                                 <!-- playlist  -->
                                 <table class="table table-sm table-dark">
@@ -163,104 +184,9 @@
                                             <th scope="row">1</th>
                                             <td>California Love</td>
                                             <td>2Pac</td>
-                                            <td>...</td>
+                                            <td><input type="button" value="Delete"></td>
                                         </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Viva Las Vegas</td>
-                                            <td>Elvis Presley</td>
-                                            <td>...</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Viva Las Vegas</td>
-                                            <td>Elvis Presley</td>
-                                            <td>...</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>Viva Las Vegas</td>
-                                            <td>Elvis Presley</td>
-                                            <td>...</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">5</th>
-                                            <td>Viva Las Vegas</td>
-                                            <td>Elvis Presley</td>
-                                            <td>...</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">6</th>
-                                            <td>Viva Las Vegas</td>
-                                            <td>Elvis Presley</td>
-                                            <td>...</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">7</th>
-                                            <td>Super Long Song Name Test... Lorem, ipsum dolor.</td>
-                                            <td>Super Long Artist Name Test... Lorem, ipsum dolor.</td>
-                                            <td>Lorem ipsum dolor sit amet.</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">7</th>
-                                            <td>Song</td>
-                                            <td>Artist</td>
-                                            <td>...</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">7</th>
-                                            <td>Song</td>
-                                            <td>Artist</td>
-                                            <td>...</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">7</th>
-                                            <td>Song</td>
-                                            <td>Artist</td>
-                                            <td>...</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">7</th>
-                                            <td>Song</td>
-                                            <td>Artist</td>
-                                            <td>...</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">7</th>
-                                            <td>Song</td>
-                                            <td>Artist</td>
-                                            <td>...</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">7</th>
-                                            <td>Song</td>
-                                            <td>Artist</td>
-                                            <td>...</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">7</th>
-                                            <td>Song</td>
-                                            <td>Artist</td>
-                                            <td>...</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">7</th>
-                                            <td>Song</td>
-                                            <td>Artist</td>
-                                            <td>...</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">7</th>
-                                            <td>Song</td>
-                                            <td>Artist</td>
-                                            <td>...</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">7</th>
-                                            <td>Song</td>
-                                            <td>Artist</td>
-                                            <td>...</td>
-                                        </tr>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -320,9 +246,7 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous">
-    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
@@ -331,8 +255,6 @@
     <script type="text/javascript" src="scripts/jquery.vmap.usa.js"></script>
 
     <script src="scripts/main.js" async defer></script>
-
 </body>
-
 
 </html>
