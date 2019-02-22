@@ -9,7 +9,9 @@ const User = db.User;
 const PlayList = db.Playlist;
 
 // Configures Body Parser to Receive Form-Data
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(bodyParser.json());
 
 // Serves static files from the Public Folder
@@ -39,7 +41,9 @@ app.get("/api/songs", (req, res) => {
 // Route for Clicking on Song for State
 
 app.get("/api/songs/:state", (req, res) => {
-  Song.find({ state: req.params.state }, (err, songs) => {
+  Song.find({
+    state: req.params.state
+  }, (err, songs) => {
     if (err) console.error("Error finding this song.");
     res.json(songs);
   });
@@ -65,7 +69,9 @@ app.post("/api/users", (req, res) => {
   console.log(req.body);
   let userEmail = req.body.email;
   console.log(userEmail);
-  User.findOne({ email: userEmail }, (err, foundUser) => {
+  User.findOne({
+    email: userEmail
+  }, (err, foundUser) => {
     if (err) return console.log(err);
     console.log(foundUser);
     if (foundUser) {
@@ -83,7 +89,9 @@ app.post("/api/users", (req, res) => {
 app.post("/api/users/:userId/songs/:songId", (req, res) => {
   let user = req.params.userId;
   let song = req.params.songId;
-  User.findOne({ _id: user }, (err, foundUser) => {
+  User.findOne({
+    _id: user
+  }, (err, foundUser) => {
     if (err) return res.send(err);
     console.log(foundUser);
     if (foundUser) {
@@ -93,7 +101,11 @@ app.post("/api/users/:userId/songs/:songId", (req, res) => {
         }
       });
       foundUser.songs.push(song);
-      User.findOneAndUpdate({ _id: user }, foundUser, { new: true })
+      User.findOneAndUpdate({
+          _id: user
+        }, foundUser, {
+          new: true
+        })
         .populate("songs")
         .exec((err, updatedUser) => {
           if (err) console.error(err);
@@ -107,7 +119,9 @@ app.post("/api/users/:userId/songs/:songId", (req, res) => {
 app.delete("/api/users/:userId/songs/:songId", (req, res) => {
   let user = req.params.userId;
   let song = req.params.songId;
-  User.findOne({ _id: user }, (err, foundUser) => {
+  User.findOne({
+    _id: user
+  }, (err, foundUser) => {
     if (err) return res.send(err);
     console.log(foundUser);
     foundUser.songs.forEach(loopsong => {
@@ -115,7 +129,11 @@ app.delete("/api/users/:userId/songs/:songId", (req, res) => {
         res.send("Song deleted");
         foundUser.songs.splice(loopsong, 1);
       }
-      User.findOneAndUpdate({ _id: user }, foundUser, { new: true })
+      User.findOneAndUpdate({
+          _id: user
+        }, foundUser, {
+          new: true
+        })
         .populate("songs")
         .exec((err, updatedUser) => {
           if (err) console.error(err);

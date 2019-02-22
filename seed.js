@@ -1,8 +1,7 @@
 const db = require("./models");
 
 // songList Test
-let songList = [
-  {
+let songList = [{
     artist: "Lynyrd Skynyrd",
     title: "Sweet Home Alambama",
     state: "Alabama",
