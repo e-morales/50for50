@@ -26,7 +26,33 @@ This is a full stack web application that plays the 50 most popular songs in eac
 * YouTube API
     * YouTube Player/Playlist
 * Expand Globally (Regions/Countries)
+* Song search functionality
+* Optimize for mobile devices / smaller screens
+* Global Playlist
 
+
+```.loader {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+}
+
+.loader .inner {
+    width: 100%;
+    height: 100%;
+    background: url(../images/preloader.gif) center center no-repeat;
+}
+
+$(window).on("load", function () {
+  $(".loader .inner").fadeOut(500, function () {
+    $(".loader").fadeOut(750);
+  });
+});
+```
 
 
 

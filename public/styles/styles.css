@@ -43,6 +43,7 @@ body {
     font-weight: 300;
     font-family: Raleway;
 }
+
 .strong {
     color: #182628;
     font-size: 1.5em;
@@ -51,12 +52,13 @@ body {
 
 .lowercase {
     text-transform: lowercase;
-    
+
 }
 
 .tab {
     margin-left: .5em;
 }
+
 .tab2 {
     margin-left: 7em;
 }
@@ -172,7 +174,7 @@ h2 {
 
 .span3 {
     max-height: 225px !important;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 #main-footer {
