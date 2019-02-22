@@ -1,7 +1,7 @@
 .loader {
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: #000;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -15,18 +15,22 @@
 }
 
 body {
-    background: #333;
+    background: #182628;
     color: #fff;
 }
 
+.bg-light {
+    background-color: #57ba97 !important;
+}
+
 .navbar {
-    border-bottom: #008ed6 3px solid;
-    opacity: 0.8;
+    border-bottom: #65ccb8 3px solid;
 }
 
 .navbar-dark .navbar-brand {
     font-family: Raleway;
     font-size: 2em;
+
 }
 
 .bg-dark {
@@ -35,8 +39,40 @@ body {
 
 .small,
 .strong {
-    color: crimson;
-    font-weight: 900;
+    color: #65ccb8;
+    font-weight: 300;
+    font-family: Raleway;
+}
+.strong {
+    color: #182628;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.lowercase {
+    text-transform: lowercase;
+    
+}
+
+.tab {
+    margin-left: .5em;
+}
+.tab2 {
+    margin-left: 7em;
+}
+
+.big {
+    font-size: 3em;
+    line-height: .75em;
+}
+
+.sub {
+    font-size: 1.5em;
+    margin-top: 2em;
+}
+
+.margin {
+    margin-top: 2em;
 }
 
 .display-4 {
@@ -52,7 +88,7 @@ h2 {
 }
 
 .bg-primary {
-    background-color: crimson !important;
+    background-color: #3b945e !important;
 }
 
 #vmap {
@@ -68,13 +104,15 @@ h2 {
     min-height: 700px;
 }
 
+
 #home-section .dark-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     min-height: 700px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(87, 186, 152, 0.8) linear-gradient(hsl(290, 50%, 8%),
+        transparent);
 }
 
 #home-section .home-inner {
@@ -86,10 +124,10 @@ h2 {
 }
 
 #home-section .fas {
-    color: #008ed6;
-    background: #fff;
-    padding: 5px;
+    color: white;
+    padding: .5em;
     border-radius: 5px;
+    font-size: 1.25em;
 }
 
 /***** Footer *****/
@@ -103,8 +141,7 @@ h2 {
 }
 
 #map-section .fas {
-    background: #333;
-    color: #fff;
+    color: red;
     padding: 5px;
     border-radius: 5px;
 }
@@ -135,5 +172,10 @@ h2 {
 
 .span3 {
     max-height: 225px !important;
-    overflow: scroll;
+    overflow: hidden;
+}
+
+#main-footer {
+    font-size: 1em;
+    font-family: Raleway;
 }
