@@ -26,16 +26,13 @@ function onSignIn(googleUser) {
 
 function handleSignIn(response) {
   console.log(response);
-  if (response == "user exists") {
-    console.log("User exists");
-  }
+  localStorage.userId = response._id;
 }
 
 function signOut(e) {
   e.preventDefault();
-  debugger;
   console.log("sign out");
-
+  localStorage.userId = "";
   var auth2 = gapi.auth2.getAuthInstance();
 
   auth2.signOut().then(function() {
@@ -47,23 +44,19 @@ $("#signOutLink").on("click", signOut);
 
 // Favorites Song
 
-$("#favoriteSong").on("click", event => {
+$("#favoriteSong").on("click", (event, googleUser) => {
   event.preventDefault();
-  profile = getBasicProfile();
-  console.log(profile);
   songId = $("#favoriteSong").data("id");
-  console.log(songId);
-  let userId = {
-    email: profile.U3,
-    name: profile.ig
-  };
+
   $.ajax({
     type: "POST",
-    url: `/api/users/${userId}/songs/${songId}`,
+    url: `/api/users/${localStorage.userId}/songs/${songId}`,
     success: response => console.log("Song favorited", response),
     error: err => console.error(err)
   });
 });
+
+// Delete Song
 
 // Loads Smooth Scrolling
 

@@ -59,6 +59,13 @@ app.get("/api/users", (req, res) => {
   });
 });
 
+app.get("/api/users/:userId", (req, res) => {
+  User.findById(req.params.userId, (err, user) => {
+    if (err) console.error("Error finding all users");
+    res.json(user);
+  });
+});
+
 // Sign in
 
 app.post("/api/users", (req, res) => {
@@ -69,7 +76,8 @@ app.post("/api/users", (req, res) => {
     if (err) return console.log(err);
     console.log(foundUser);
     if (foundUser) {
-      res.send(`user exists and ${foundUser.id}`);
+      // res.send(`user exists and ${foundUser.id}`);
+      res.json(foundUser);
     } else {
       User.create(req.body, (err, newUser) => {
         if (err) return console.error(err);
@@ -112,15 +120,13 @@ app.delete("/api/users/:userId/songs/:songId", (req, res) => {
     console.log(foundUser);
     foundUser.songs.forEach(loopsong => {
       if (loopsong == song) {
-        res.send(`${loopsong} deleted`);
+        // res.send(`${loopsong} deleted`);
         foundUser.songs.splice(loopsong, 1);
       }
-      User.findOneAndUpdate({ _id: user }, foundUser, { new: true })
-        .populate("songs")
-        .exec((err, updatedUser) => {
-          if (err) console.error(err);
-          res.json(updatedUser);
-        });
+      foundUser.save((err, updatedUser) => {
+        if (err) return console.error(err);
+        res.json(updatedUser);
+      });
     });
   });
 });
