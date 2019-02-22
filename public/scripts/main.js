@@ -10,7 +10,6 @@ $(window).on("load", function() {
 // Google Sign-In
 function onSignIn(googleUser) {
   profile = googleUser.getBasicProfile();
-  console.log(profile);
   let user = {
     email: profile.U3,
     name: profile.ig
@@ -25,14 +24,13 @@ function onSignIn(googleUser) {
 }
 
 function handleSignIn(response) {
-  console.log(response);
   localStorage.userId = response._id;
 }
 
 function signOut(e) {
   e.preventDefault();
   console.log("sign out");
-  localStorage.userId = "";
+  localStorage.userId = null;
   var auth2 = gapi.auth2.getAuthInstance();
 
   auth2.signOut().then(function() {
@@ -41,6 +39,31 @@ function signOut(e) {
 }
 
 $("#signOutLink").on("click", signOut);
+
+if (localStorage.userId) {
+  displaySongs();
+}
+
+function displaySongs() {
+  $.ajax({
+    type: "GET",
+    url: `/api/users/${localStorage.userId}`,
+    success: response => {
+      console.log(response);
+      response.songs.forEach(song => {
+        $("tbody").append(`<tr id=${song._id}>
+            <th scope="row"></th>
+            <td>${song.title}</td>
+            <td>${song.artist}</td>
+            <td><input id="deleteSong" data-id=${
+              song._id
+            } type="button" value="Delete"></td>
+        </tr>`);
+      });
+    },
+    error: err => console.log(err)
+  });
+}
 
 // Favorites Song
 
@@ -51,12 +74,40 @@ $("#favoriteSong").on("click", (event, googleUser) => {
   $.ajax({
     type: "POST",
     url: `/api/users/${localStorage.userId}/songs/${songId}`,
-    success: response => console.log("Song favorited", response),
+    success: response => {
+      console.log(response);
+      if (response != "song already in collection") {
+        let song = response.songs[response.songs.length - 1];
+
+        $("tbody").append(`<tr id=${song._id}>
+            <th scope="row"></th>
+            <td>${song.title}</td>
+            <td>${song.artist}</td>
+            <td><input id="deleteSong" data-id=${
+              song._id
+            } type="button" value="Delete"></td>
+        </tr>`);
+      }
+    },
     error: err => console.error(err)
   });
 });
 
 // Delete Song
+$("tbody").on("click", "#deleteSong", function(e) {
+  e.preventDefault();
+  console.log($(this));
+  let songId = $(this).attr("data-id");
+  console.log(songId);
+  $.ajax({
+    method: "DELETE",
+    url: `/api/users/${localStorage.userId}/songs/${songId}`,
+    success: response => {
+      console.log(response);
+      $(`tr[id=${songId}]`).remove();
+    }
+  });
+});
 
 // Loads Smooth Scrolling
 

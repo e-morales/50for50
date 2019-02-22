@@ -60,10 +60,12 @@ app.get("/api/users", (req, res) => {
 });
 
 app.get("/api/users/:userId", (req, res) => {
-  User.findById(req.params.userId, (err, user) => {
-    if (err) console.error("Error finding all users");
-    res.json(user);
-  });
+  User.findById(req.params.userId)
+    .populate("songs")
+    .exec((err, user) => {
+      if (err) console.error(err);
+      res.json(user);
+    });
 });
 
 // Sign in
@@ -90,23 +92,33 @@ app.post("/api/users", (req, res) => {
 // Add Song to Personal Playlist
 app.post("/api/users/:userId/songs/:songId", (req, res) => {
   let user = req.params.userId;
-  let song = req.params.songId;
+  let songId = req.params.songId;
+  let songFound;
+  console.log(songId);
   User.findOne({ _id: user }, (err, foundUser) => {
     if (err) return res.send(err);
-    console.log(foundUser);
+
     if (foundUser) {
-      foundUser.songs.forEach(loopsong => {
-        if (loopsong == song) {
-          return res.send("song already in collection");
-        }
-      });
-      foundUser.songs.push(song);
-      User.findOneAndUpdate({ _id: user }, foundUser, { new: true })
-        .populate("songs")
-        .exec((err, updatedUser) => {
-          if (err) console.error(err);
-          res.json(updatedUser);
-        });
+      // foundUser.songs.forEach(loopsong => {
+      //   if (loopsong == song) {
+      //     songFound= true;
+      //     break;
+      //   }
+      // });
+
+      songFound = foundUser.songs.filter(song => song == songId);
+      console.log(songFound);
+      if (songFound.length > 0) {
+        res.send("song already in collection");
+      } else {
+        foundUser.songs.push(songId);
+        User.findOneAndUpdate({ _id: user }, foundUser, { new: true })
+          .populate("songs")
+          .exec((err, updatedUser) => {
+            if (err) console.error(err);
+            res.json(updatedUser);
+          });
+      }
     }
   });
 });
