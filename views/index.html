@@ -114,22 +114,12 @@
                                 <form action="">
 
                                     <!-- Google sign in button -->
-                                    <div class="g-signin2 mb-3" data-width="305" data-height="50" data-longtitle="true data-onsuccess="
-                                        onSignIn"></div>
+                                    <div class="g-signin2 mb-3" data-width="305" data-height="50" data-longtitle="true" data-onsuccess="onSignIn"></div>
 
                                     <!-- Sign out -->
-                                    <a class="btn btn-outline-light btn-block" href="#" onclick="signOut()">Sign
-                                        out</a>
-                                    <script>
-                                        function signOut() {
-                                                console.log("sign out");
-                                                var auth2 = gapi.auth2.getAuthInstance();
-                                                auth2.signOut().then(function() {
-                                                alert("You have signed out");
-                                                });
-                                        }
-                                            </script>
-
+                                    <a id="signOutLink" class="btn btn-outline-light btn-block" href="#">
+                                        Sign out
+                                    </a>
                                 </form>
                             </div>
                         </div>
@@ -167,7 +157,7 @@
                             <iframe id="player" type="text/html" width="530" height="450" src="https://www.youtube.com/embed/3kJWdUFzL0Y"
                                 frameborder="0"></iframe>
                             TODO:
-                            <a class="favoriteSong" href="#"><i class="fas fa-heart"></i></a>
+                            <i id="favoriteSong" data-id="" class="fas fa-heart"></i>
 
                             <div class="span3">
                                 <!-- playlist  -->
@@ -256,6 +246,7 @@
     <script type="text/javascript" src="scripts/jquery.vmap.usa.js"></script>
 
     <script src="scripts/main.js" async defer></script>
+    <!-- <script src="scripts/main.js"></script> -->
 
 </body>
 

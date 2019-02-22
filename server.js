@@ -36,7 +36,7 @@ app.get("/api/songs", (req, res) => {
   });
 });
 
-// Route for Clicking on Song for State
+// Route for Clicking on State for Song
 
 app.get("/api/songs/:state", (req, res) => {
   Song.find({ state: req.params.state }, (err, songs) => {
@@ -112,7 +112,7 @@ app.delete("/api/users/:userId/songs/:songId", (req, res) => {
     console.log(foundUser);
     foundUser.songs.forEach(loopsong => {
       if (loopsong == song) {
-        res.send("Song deleted");
+        res.send(`${loopsong} deleted`);
         foundUser.songs.splice(loopsong, 1);
       }
       User.findOneAndUpdate({ _id: user }, foundUser, { new: true })

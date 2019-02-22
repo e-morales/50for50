@@ -27,17 +27,31 @@ function onSignIn(googleUser) {
 function handleSignIn(response) {
   console.log(response);
   if (response == "user exists") {
-  } else {
+    console.log("User exists");
   }
 }
 
+function signOut(e) {
+  e.preventDefault();
+  debugger;
+  console.log("sign out");
+
+  var auth2 = gapi.auth2.getAuthInstance();
+
+  auth2.signOut().then(function() {
+    console.log("User signed out.");
+  });
+}
+
+$("#signOutLink").on("click", signOut);
+
 // Favorites Song
 
-$(".fa-heart").on("click", event => {
+$("#favoriteSong").on("click", event => {
   event.preventDefault();
-  //   let profile = googleUser.getBasicProfile();
+  profile = getBasicProfile();
   console.log(profile);
-  songId = $(".fa-heart").data("data-id");
+  songId = $("#favoriteSong").data("id");
   console.log(songId);
   let userId = {
     email: profile.U3,
@@ -106,7 +120,7 @@ $(document).ready(function() {
         success: songs => {
           songs.forEach(song => {
             $("iframe").attr("src", `${song.songUrl}`);
-            $("#favoriteSong").data(song._id);
+            $("#favoriteSong").data("id", `${song._id}`);
           });
         }
       });
