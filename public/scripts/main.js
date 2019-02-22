@@ -1,8 +1,8 @@
 // import { google } from "googleapis";
 let profile;
 // Preloader
-$(window).on("load", function() {
-  $(".loader .inner").fadeOut(500, function() {
+$(window).on("load", function () {
+  $(".loader .inner").fadeOut(500, function () {
     $(".loader").fadeOut(750);
   });
 });
@@ -33,7 +33,7 @@ function signOut(e) {
   localStorage.userId = null;
   var auth2 = gapi.auth2.getAuthInstance();
 
-  auth2.signOut().then(function() {
+  auth2.signOut().then(function () {
     console.log("User signed out.");
   });
 }
@@ -94,7 +94,7 @@ $("#favoriteSong").on("click", (event, googleUser) => {
 });
 
 // Delete Song
-$("tbody").on("click", "#deleteSong", function(e) {
+$("tbody").on("click", "#deleteSong", function (e) {
   e.preventDefault();
   console.log($(this));
   let songId = $(this).attr("data-id");
@@ -111,7 +111,7 @@ $("tbody").on("click", "#deleteSong", function(e) {
 
 // Loads Smooth Scrolling
 
-$(document).ready(function() {
+$(document).ready(function () {
   // Gets current copyright year
   $("#year").text(new Date().getFullYear());
 
@@ -121,18 +121,17 @@ $(document).ready(function() {
   });
 
   // Smooth Scrolling
-  $("#main-nav a").on("click", function(event) {
+  $("#main-nav a").on("click", function (event) {
     if (this.hash !== "") {
       event.preventDefault();
 
       const hash = this.hash;
 
-      $("html, body").animate(
-        {
+      $("html, body").animate({
           scrollTop: $(hash).offset().top
         },
         800,
-        function() {
+        function () {
           window.location.hash = hash;
         }
       );
@@ -156,7 +155,7 @@ $(document).ready(function() {
     selectedColor: "#c9dfaf",
     selectedRegions: null,
     showTooltip: true,
-    onRegionClick: function(element, code, state) {
+    onRegionClick: function (element, code, state) {
       $.ajax({
         type: "GET",
         url: `/api/songs/${state}`,

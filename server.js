@@ -43,8 +43,7 @@ app.get("/api/songs", (req, res) => {
 // Route for Clicking on State for Song
 
 app.get("/api/songs/:state", (req, res) => {
-  Song.find(
-    {
+  Song.find({
       state: req.params.state
     },
     (err, songs) => {
@@ -83,8 +82,7 @@ app.post("/api/users", (req, res) => {
   console.log(req.body);
   let userEmail = req.body.email;
   console.log(userEmail);
-  User.findOne(
-    {
+  User.findOne({
       email: userEmail
     },
     (err, foundUser) => {
@@ -109,7 +107,9 @@ app.post("/api/users/:userId/songs/:songId", (req, res) => {
   let songId = req.params.songId;
   let songFound;
   console.log(songId);
-  User.findOne({ _id: user }, (err, foundUser) => {
+  User.findOne({
+    _id: user
+  }, (err, foundUser) => {
     if (err) return res.send(err);
 
     if (foundUser) {
@@ -126,7 +126,11 @@ app.post("/api/users/:userId/songs/:songId", (req, res) => {
         res.send("song already in collection");
       } else {
         foundUser.songs.push(songId);
-        User.findOneAndUpdate({ _id: user }, foundUser, { new: true })
+        User.findOneAndUpdate({
+            _id: user
+          }, foundUser, {
+            new: true
+          })
           .populate("songs")
           .exec((err, updatedUser) => {
             if (err) console.error(err);
@@ -141,8 +145,7 @@ app.post("/api/users/:userId/songs/:songId", (req, res) => {
 app.delete("/api/users/:userId/songs/:songId", (req, res) => {
   let user = req.params.userId;
   let song = req.params.songId;
-  User.findOne(
-    {
+  User.findOne({
       _id: user
     },
     (err, foundUser) => {

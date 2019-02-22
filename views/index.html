@@ -11,10 +11,12 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
 
+
     <title>50 for 50</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -58,17 +60,18 @@
             <div class="home-inner container">
                 <div class="row">
                     <div class="col-lg-8 d-none d-lg-block">
-                            <h1 class="display-4">
-                                    <span class="big">50</span> 
-                                    Songs.<br>
-                                    <span class="big tab">50</span> 
-                                    States.
-                            </h1>
-                            <h1 class="display-4 sub tab2">
+                        <h1 class="display-4">
+                            <span class="big">50</span>
+                            Songs.<br>
+                            <span class="big tab">50</span>
+                            States.
+                        </h1>
+                        <h1 class="display-4 sub tab2">
                             Each state's <span class="strong">#1</span> hit</h1>
-                        <h2 class="margin"><i class="fas fa-music fa-2x"></i>Discover which songs <span class="strong">dominate</span> across the country!</h2>
+                        <h2 class="margin"><i class="fas fa-music fa-2x"></i>Discover which songs <span class="strong">dominate</span>
+                            across the country!</h2>
 
-                    
+
                     </div>
                     </section>
 
@@ -81,7 +84,8 @@
                                 <form action="">
 
                                     <!-- Google sign in button -->
-                                    <div class="g-signin2 mb-3" data-width="305" data-height="50" data-longtitle="true" data-onsuccess="onSignIn"></div>
+                                    <div class="g-signin2 mb-3" data-width="305" data-height="50" data-longtitle="true"
+                                        data-onsuccess="onSignIn"></div>
 
                                     <!-- Sign out -->
                                     <a id="signOutLink" class="btn btn-outline-light btn-block" href="#">
@@ -123,9 +127,11 @@
                             <!-- iframe player -->
                             <iframe id="player" type="text/html" width="530" height="450" src="https://www.youtube.com/embed/3kJWdUFzL0Y"
                                 frameborder="0"></iframe>
-                            
+
                             <i id="favoriteSong" data-id="" class="fas fa-heart mb-2"></i>
-                            <div><h4>Your Playlist:</h4></div>
+                            <div>
+                                <h4>Your Playlist:</h4>
+                            </div>
                             <div class="span3">
                                 <!-- playlist  -->
                                 <table class="table table-sm table-dark">
@@ -138,7 +144,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                            
+
 
                                     </tbody>
                                 </table>
