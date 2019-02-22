@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/mapsing", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mapsing", {
+  useNewUrlParser: true
+});
 
 module.exports = {
   User: require("./user"),
