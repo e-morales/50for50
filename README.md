@@ -16,7 +16,7 @@ This is a full stack web application that plays the 50 most popular songs in eac
 
 ## Existing Features
 * Clickable JQuery map (JQVmap)
-* Google Login
+* Google Authorization
 * Custom Playlist 
     * User can add/remove songs
 
