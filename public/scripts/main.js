@@ -63,13 +63,13 @@ $(document).ready(function() {
 
   $("#vmap").vectorMap({
     map: "usa_en",
-    backgroundColor: "#a5bfdd",
-    borderColor: "#818181",
+    backgroundColor: "#57ba98",
+    borderColor: "#fff",
     borderOpacity: 0.25,
-    borderWidth: 1,
-    color: "#f4f3f0",
+    borderWidth: 2,
+    color: "#182628",
     enableZoom: true,
-    hoverColor: "#c9dfaf",
+    hoverColor: "#3b945e",
     hoverOpacity: null,
     normalizeFunction: "linear",
     scaleColors: ["#b6d6ff", "#005ace"],

@@ -15,18 +15,21 @@
 }
 
 body {
-    background: #333;
+    background: #182628;
     color: #fff;
+}
+.bg-light {
+    background-color: #57ba97 !important;
 }
 
 .navbar {
-    border-bottom: #008ed6 3px solid;
-    opacity: 0.8;
+    border-bottom: #65ccb8 3px solid;
 }
 
 .navbar-dark .navbar-brand {
     font-family: Raleway;
     font-size: 2em;
+    
 }
 
 .bg-dark {
@@ -35,7 +38,7 @@ body {
 
 .small,
 .strong {
-    color: crimson;
+    color: #57ba57;
     font-weight: 900;
 }
 
@@ -68,13 +71,18 @@ h2 {
     min-height: 700px;
 }
 
+
 #home-section .dark-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     min-height: 700px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(87,186,152, 0.8)
+    linear-gradient(
+        hsl(290, 50%, 8%),
+        transparent
+      );
 }
 
 #home-section .home-inner {
