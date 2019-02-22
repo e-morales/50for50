@@ -113,13 +113,3 @@ $(document).ready(function() {
     }
   });
 });
-
-// url: `/api/users/${userid}/songs/${songId}`
-
-// Playlist item prototype
-// <tr>
-//  <th scope="row">1</th>
-//  <td>California Love</td>
-//  <td>2Pac</td>
-//  <td><input type="button" value="Delete"></td>
-// </tr>
