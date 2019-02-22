@@ -62,6 +62,7 @@ app.get("/api/users", (req, res) => {
 // Sign in
 
 app.post("/api/users", (req, res) => {
+  console.log(req.body);
   let userEmail = req.body.email;
   console.log(userEmail);
   User.findOne({ email: userEmail }, (err, foundUser) => {
