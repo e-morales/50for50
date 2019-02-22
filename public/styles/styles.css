@@ -151,4 +151,5 @@ h2 {
 #main-footer {
     font-size: 1em;
     font-family: Raleway;
+    overflow: scroll;
 }
